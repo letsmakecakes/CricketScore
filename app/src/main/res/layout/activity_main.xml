@@ -1,79 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@color/black"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="60dp">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="412dp"
-            android:layout_height = "60dp"
-            android:layout_weight="1"
-            android:text="Home"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/add_match"
+        android:layout_width="354dp"
+        android:layout_height="106dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/cust_button"
+        android:text="ADD MATCH"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.339"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
 
-    <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="100dp">
+    <Button
+        android:id="@+id/match_history"
+        android:layout_width="363dp"
+        android:layout_height="101dp"
+        android:text="MATCH HISTORY"
+        android:textSize="30dp"
+        android:background="@drawable/cust_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        app:layout_constraintVertical_bias="0.586" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="400dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:paddingLeft="15dp"
-            android:paddingTop="15dp"
-            android:text="Hello\nWelcome to Gully Cricket"
-            android:textColor="@color/white"
-            android:textSize="30dp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/player_stats"
+        android:layout_width="363dp"
+        android:layout_height="101dp"
+        android:layout_margin="10dp"
+        android:text="Player Stats"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        android:background="@drawable/cust_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/match_history"
+        app:layout_constraintVertical_bias="0.167" />
 
-    <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="400dp"
-        android:orientation="vertical"
-        android:paddingTop="20dp"
-        android:paddingLeft="20dp">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Admin "
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
 
-        <Button
-            android:id="@+id/addMatch"
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#069AE8"
-            android:text="Add Match" />
 
-        <Button
-            android:id="@+id/playerStats"
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:backgroundTint="#069AE8"
-            android:text="Player Stats" />
-
-        <Button
-            android:id="@+id/matchHistory"
-            android:layout_width="369dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:backgroundTint="#069AE8"
-            android:text="Match History" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
