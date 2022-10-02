@@ -1,9 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMatch">
+    android:background="#0F19DF"
+    tools:context=".MainActivity">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEAMS"
+        android:textColor="#FDFBFB"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="418dp"
+        android:layout_height="132dp"
+        android:background="#100F0F"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.089">
+
+
+        <EditText
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#EDE7E7"
+            android:hint="HOST"
+            android:singleLine="true"
+            android:textColor="#FDFBFB"
+            android:visibility="visible"></EditText>
+
+        <EditText
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#EDE7E7"
+            android:hint="HOST"
+            android:singleLine="true"
+            android:textColor="#FDFBFB"
+            android:visibility="visible"></EditText>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="TOSS WON?"
+        android:textColor="#FDFBFB"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.278">
+
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="419dp"
+        android:layout_height="95dp"
+        android:background="#100F0F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368">
+
+
+        <RadioGroup
+            android:layout_width="377dp"
+            android:layout_height="78dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="3dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="120dp"
+                android:layout_height="69dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:text="HOST"
+                android:textColor="#FDFBFB"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="204dp"
+                android:layout_height="69dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="40dp"
+                android:text="VISITOR"
+                android:textColor="#FDFBFB"
+                android:textSize="20dp" />
+
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="OPTED FOR?"
+        android:textColor="#FDFBFB"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482">
+
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="419dp"
+        android:layout_height="91dp"
+        android:background="#100F0F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597">
+
+
+        <RadioGroup
+            android:layout_width="392dp"
+            android:layout_height="76dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="120dp"
+                android:layout_height="69dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:text="BAT"
+                android:textColor="#FDFBFB"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="221dp"
+                android:layout_height="73dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="40dp"
+                android:text="BALL"
+                android:textColor="#FDFBFB"
+                android:textSize="20dp" />
+
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="425dp"
+        android:layout_height="80dp"
+        android:background="#100F0F"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.768">
+
+        <TextView
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+
+            android:text="OVERS?"
+            android:textColor="#FDFBFB"
+            android:textSize="20dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="208dp"
+            android:layout_height="61dp"
+            android:layout_marginLeft="40dp"
+            android:backgroundTint="#EDE7E7"
+            android:singleLine="true"
+            android:textColor="#FDFBFB"
+            android:textStyle="bold"
+            android:visibility="visible"></EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:backgroundTint="#100F0F"
+        android:backgroundTintMode="add"
+        android:text="NEXT"
+        android:textColor="#FDFBFB"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
