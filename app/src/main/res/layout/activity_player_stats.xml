@@ -32,11 +32,12 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="316dp"
-            android:textAlignment="textStart"
             android:layout_marginBottom="0dp"
-            android:background="@color/purple_700"
+
+            android:backgroundTint="@color/purple_700"
             android:onClick="submit"
-            android:text="back" />
+            android:text="NEXT"
+            android:textAlignment="textStart" />
 
 
     </RelativeLayout>

@@ -43,7 +43,7 @@
         android:layout_width="363dp"
         android:layout_height="101dp"
         android:layout_margin="10dp"
-        android:text="Player Stats"
+        android:text="Team Stats"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

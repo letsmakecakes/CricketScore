@@ -172,7 +172,7 @@
             </TextView>
 
 
-            <EditText
+            <TextView
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="80dp"
@@ -181,7 +181,7 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
             <EditText
                 android:layout_width="42dp"
@@ -436,6 +436,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="1dp"
             android:backgroundTint="#0F19DF"
+            android:onClick="retire"
             android:text="RETIRE">
 
         </Button>
