@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button addMatch, matchHistory, playerStats;
+    Button addMatch, matchHistory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         addMatch = (Button) findViewById(R.id.add_match);
         matchHistory = (Button) findViewById(R.id.match_history);
-        playerStats = (Button) findViewById(R.id.player_stats);
 
         addMatch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,12 +33,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        playerStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), TeamStats.class);
-                startActivity(intent);
-            }
-        });
+    }
+
+    public void openTeamStats(View view) {
+        Intent intent = new Intent(MainActivity.this, TeamStats.class);
+        startActivity(intent);
     }
 }

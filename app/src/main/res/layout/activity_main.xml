@@ -39,12 +39,13 @@
         app:layout_constraintVertical_bias="0.586" />
 
     <Button
-        android:id="@+id/player_stats"
+        android:id="@+id/team_stats"
         android:layout_width="363dp"
         android:layout_height="101dp"
         android:layout_margin="10dp"
         android:text="Team Stats"
         android:textSize="30dp"
+        android:onClick="openTeamStats"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
@@ -57,7 +58,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to \nBatBall"
+        android:text="Welcome to \nGully Cricket"
         android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
