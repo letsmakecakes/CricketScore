@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 
 public class AddPlayers extends AppCompatActivity {
+    String host, away, overs;
+
     public void startmatch(View view){
         Intent intent=new Intent(AddPlayers.this,InputScoreboard.class);
         startActivity(intent );
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
