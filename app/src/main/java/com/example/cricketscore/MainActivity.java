@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AddMatch.class);
                 startActivity(intent);
-                System.exit(0);
+                int a, b, c;
             }
         });
 
