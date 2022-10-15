@@ -16,9 +16,8 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTeam = "CREATE TABLE teams(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)";
-        sqLiteDatabase.execSQL(createTeam);
-        String createPlayers = "CREATE TABLE players(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        String createTeamsTable = "CREATE TABLE teams(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)";
+        String createPlayersTable = "CREATE TABLE players(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "name TEXT, " +
                 "matches INTEGER DEFAULT 0 NOT NULL, " +
                 "runs INTEGER DEFAULT 0 NOT NULL," +
@@ -29,17 +28,18 @@ public class Database extends SQLiteOpenHelper {
                 "balls INTEGER DEFAULT 0 NOT NULL," +
                 "wickets INTEGER DEFAULT 0 NOT NULL, " +
                 "FOREIGN KEY(team_id) REFERENCES teams(_id))";
-        sqLiteDatabase.execSQL(createPlayers);
-        String createMatchHistory = "CREATE TABLE match_history(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "FOREIGN KEY(host_team_id) REFERENCES teams(_id), " +
-                "FOREIGN KEY(visitor_team_id) REFERENCES teams(_id), " +
+        String createMatchHistoryTable = "CREATE TABLE match_history(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "FOREIGN KEY(host_team_id) REFERENCES teams(_id)," +
+                "FOREIGN KEY(visitor_team_id) REFERENCES teams(_id)," +
                 "FOREIGN KEY(won_team_id) REFERENCES teams(_id))";
-        sqLiteDatabase.execSQL(createMatchHistory);
+        sqLiteDatabase.execSQL(createTeamsTable);
+        sqLiteDatabase.execSQL(createPlayersTable);
+        sqLiteDatabase.execSQL(createMatchHistoryTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("drop table if exists teams");
+       sqLiteDatabase.execSQL("drop table if exists teams");
         sqLiteDatabase.execSQL("drop table if exists players");
         sqLiteDatabase.execSQL("drop table if exists match_history");
         onCreate(sqLiteDatabase);
@@ -81,16 +81,17 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put("runs", runs);
         contentValues.put("sixes", sixes);
         contentValues.put("fours", fours);
-        Cursor cursor = db.rawQuery("select * from players where name=? and team_id = (select team_id from teams where name = ?)", new String[]{playerName, teamName});
+        Cursor cursor = db.rawQuery("select * from players where name=? and team_id = (select _id from teams where name = ?)", new String[]{playerName, teamName});
+        Cursor playerId = db.rawQuery("select _id from players where name=? and team_id = (select _id from teams where teams.name = ?)", new String[]{playerName, teamName});
         if(cursor.getCount() > 0)
         {
-           long r =  db.update("players", contentValues, "name = ? and team_id = (select team_id from teams where name = ?)",  new String[]{playerName, teamName});
-           if(r == -1) {
+            long r =  db.update("players", contentValues, "_id = ?",  new String[]{String.valueOf(playerId)});
+            if(r == -1) {
                return false;
-           }
-           else {
+            }
+            else {
                return true;
-           }
+            }
         }
         return false;
     }
@@ -101,10 +102,11 @@ public class Database extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("balls", balls);
         contentValues.put("wickets", wickets);
-        Cursor cursor = db.rawQuery("select * from players where name=? and team_id = (select team_id from teams where name = ?)", new String[]{playerName, teamName});
+        Cursor cursor = db.rawQuery("select * from players where name=? and team_id = (select _id from teams where teams.name = ?)", new String[]{playerName, teamName});
+        Cursor playerId = db.rawQuery("select _id from players where name=? and team_id = (select _id from teams where teams.name = ?)", new String[]{playerName, teamName});
         if(cursor.getCount() > 0)
         {
-            long r =  db.update("players", contentValues, "name = ? and team_id = (select team_id from teams where name = ?)",  new String[]{playerName, teamName});
+            long r =  db.update("players", contentValues, "_id = ?",  new String[]{String.valueOf(playerId)});
             if(r == -1) {
                 return false;
             }
@@ -139,7 +141,19 @@ public class Database extends SQLiteOpenHelper {
 
     public Cursor getTeams() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM teams", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT name FROM teams", null);
+        return cursor;
+    }
+
+    public Cursor getPlayers(String team) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT name FROM players WHERE _id = (SELECT team_id FROM teams WHERE teams.name = ?)", new String[]{team});
+        return cursor;
+    }
+
+    public Cursor getPlayerInfo(String player, String team) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT matches, fours, sixes, runs, fifties, hundreds, balls, wickets FROM players where _id = (SELECT _id FROM players WHERE name = ?) AND team_id = (SELECT _id FROM teams where name = ?)", new String[]{player, team});
         return cursor;
     }
 }
