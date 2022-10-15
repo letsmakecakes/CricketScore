@@ -51,12 +51,7 @@ public class Database extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
         long r = db.insert("teams", null, contentValues);
-        if(r == -1) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        return r != -1;
     }
 
     public boolean insertPlayer(String name, int team_id)
@@ -66,12 +61,7 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put("name", name);
         contentValues.put("team_id", team_id);
         long r = db.insert("players", null, contentValues);
-        if(r == -1) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        return r != -1;
     }
 
     public boolean updateRuns(String playerName, String teamName, int runs, int sixes, int fours)
@@ -86,12 +76,7 @@ public class Database extends SQLiteOpenHelper {
         if(cursor.getCount() > 0)
         {
             long r =  db.update("players", contentValues, "_id = ?",  new String[]{String.valueOf(playerId)});
-            if(r == -1) {
-               return false;
-            }
-            else {
-               return true;
-            }
+            return r != -1;
         }
         return false;
     }
@@ -107,12 +92,7 @@ public class Database extends SQLiteOpenHelper {
         if(cursor.getCount() > 0)
         {
             long r =  db.update("players", contentValues, "_id = ?",  new String[]{String.valueOf(playerId)});
-            if(r == -1) {
-                return false;
-            }
-            else {
-                return true;
-            }
+            return r != -1;
         }
         return false;
     }
@@ -131,12 +111,7 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put("visitor_team_id", visitorTeamId);
         contentValues.put("won_team_id", wonTeamId);
         long r = db.insert("match_history", null, contentValues);
-        if(r == -1) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        return r != -1;
     }
 
     public Cursor getTeams() {
@@ -156,4 +131,8 @@ public class Database extends SQLiteOpenHelper {
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT matches, fours, sixes, runs, fifties, hundreds, balls, wickets FROM players where _id = (SELECT _id FROM players WHERE name = ?) AND team_id = (SELECT _id FROM teams where name = ?)", new String[]{player, team});
         return cursor;
     }
+
+   /* public Cursor getMatchHistory() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+    }*/
 }
