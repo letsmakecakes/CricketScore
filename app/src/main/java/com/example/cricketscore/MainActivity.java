@@ -11,14 +11,12 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button addMatch, matchHistory;
     Database db;
-    SQLiteDatabase sqLiteDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         db = new Database(this);
-        sqLiteDatabase = db.getReadableDatabase();
 
         addMatch = (Button) findViewById(R.id.add_match);
         matchHistory = (Button) findViewById(R.id.match_history);

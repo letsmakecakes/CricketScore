@@ -18,9 +18,22 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String createTeam = "CREATE TABLE teams(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)";
         sqLiteDatabase.execSQL(createTeam);
-        String createPlayers = "CREATE TABLE players(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, FOREIGN KEY(team_id) REFERENCES teams(_id), matches INTEGER, runs INTEGER DEFAULT 0 NOT NULL, sixes INTEGER DEFAULT 0 NOT NULL, fours INTEGER DEFAULT 0 NOT NULL, fifties INTEGER DEFAULT 0 NOT NULL, hundreds INTEGER DEFAULT 0 NOT NULL, balls INTEGER DEFAULT 0 NOT NULL, wickets INTEGER DEFAULT 0 NOT NULL";
+        String createPlayers = "CREATE TABLE players(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "name TEXT, " +
+                "matches INTEGER DEFAULT 0 NOT NULL, " +
+                "runs INTEGER DEFAULT 0 NOT NULL," +
+                "sixes INTEGER DEFAULT 0 NOT NULL," +
+                "fours INTEGER DEFAULT 0 NOT NULL," +
+                "fifties INTEGER DEFAULT 0 NOT NULL," +
+                "hundreds INTEGER DEFAULT 0 NOT NULL," +
+                "balls INTEGER DEFAULT 0 NOT NULL," +
+                "wickets INTEGER DEFAULT 0 NOT NULL, " +
+                "FOREIGN KEY(team_id) REFERENCES teams(_id))";
         sqLiteDatabase.execSQL(createPlayers);
-        String createMatchHistory = "CREATE TABLE match_history(_id INTEGER PRIMARY KEY AUTOINCREMENT, FOREIGN KEY(host_team_id) REFERENCES teams(_id), FOREIGN KEY(visitor_team_id) REFERENCES teams(_id), FOREIGN KEY(won_team_id) REFERENCES teams(_id))";
+        String createMatchHistory = "CREATE TABLE match_history(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "FOREIGN KEY(host_team_id) REFERENCES teams(_id), " +
+                "FOREIGN KEY(visitor_team_id) REFERENCES teams(_id), " +
+                "FOREIGN KEY(won_team_id) REFERENCES teams(_id))";
         sqLiteDatabase.execSQL(createMatchHistory);
     }
 
@@ -122,5 +135,11 @@ public class Database extends SQLiteOpenHelper {
         else {
             return true;
         }
+    }
+
+    public Cursor getTeams() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM teams", null);
+        return cursor;
     }
 }
