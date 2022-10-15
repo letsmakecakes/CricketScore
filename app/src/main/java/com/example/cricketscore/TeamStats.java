@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 
 public class TeamStats extends AppCompatActivity {
-    String teams[];
+    String[] teams;
     Database database;
     Cursor cursor;
     ListView listView;
@@ -32,17 +32,14 @@ public class TeamStats extends AppCompatActivity {
             }
         }
         listView = (ListView) findViewById(R.id.team_list);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(TeamStats.this, android.R.layout.simple_dropdown_item_1line, teams);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(TeamStats.this, android.R.layout.simple_dropdown_item_1line, teams);
         listView.setAdapter(arrayAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String item = adapterView.getItemAtPosition(i).toString();
-                Intent intent = new Intent(TeamStats.this, PlayerStats.class);
-                intent.putExtra("team", item);
-                startActivity(intent);
-            }
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            String item = adapterView.getItemAtPosition(i).toString();
+            Intent intent = new Intent(TeamStats.this, PlayerStats.class);
+            intent.putExtra("team", item);
+            startActivity(intent);
         });
     }
     /*public void next(View view) {

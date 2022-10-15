@@ -18,8 +18,8 @@ public class PlayerInfo extends AppCompatActivity {
         setContentView(R.layout.activity_player_info);
 
         Intent intent = getIntent();
-        player = intent.getStringExtra("player").toString();
-        team = intent.getStringExtra("team").toString();
+        player = intent.getStringExtra("player");
+        team = intent.getStringExtra("team");
         textView1 = (TextView) findViewById(R.id.matches);
         textView2 = (TextView) findViewById(R.id.fours);
         textView3 = (TextView) findViewById(R.id.sixes);

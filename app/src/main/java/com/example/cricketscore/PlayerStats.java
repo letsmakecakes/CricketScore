@@ -1,17 +1,15 @@
 package com.example.cricketscore;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class PlayerStats extends AppCompatActivity {
-    String players[];
+    String[] players;
     String team;
     ListView listView;
     Database database;
@@ -36,18 +34,15 @@ public class PlayerStats extends AppCompatActivity {
         }
 
         listView = (ListView) findViewById(R.id.player_list);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(PlayerStats.this, android.R.layout.simple_dropdown_item_1line, players);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(PlayerStats.this, android.R.layout.simple_dropdown_item_1line, players);
         listView.setAdapter(arrayAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String item = adapterView.getItemAtPosition(i).toString();
-                Intent intent = new Intent(PlayerStats.this, PlayerInfo.class);
-                intent.putExtra("player", item);
-                intent.putExtra("team", team);
-                startActivity(intent);
-            }
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            String item = adapterView.getItemAtPosition(i).toString();
+            Intent intent1 = new Intent(PlayerStats.this, PlayerInfo.class);
+            intent1.putExtra("player", item);
+            intent1.putExtra("team", team);
+            startActivity(intent1);
         });
     }
 
