@@ -29,8 +29,12 @@ public class Database extends SQLiteOpenHelper {
                 "wickets INTEGER DEFAULT 0 NOT NULL, " +
                 "FOREIGN KEY(team_id) REFERENCES teams(_id))";
         String createMatchHistoryTable = "CREATE TABLE match_history(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "FOREIGN KEY(host_team_id) REFERENCES teams(_id)," +
-                "FOREIGN KEY(visitor_team_id) REFERENCES teams(_id)," +
+                "host_team_runs INTEGER DEFAULT 0 NOT NULL," +
+                "host_team_wickets INTEGER DEFAULT 0 NOT NULL, " +
+                "visitor_team_runs INTEGER DEFAULT 0 NOT NULL, " +
+                "visitor_team_runs INTEGER DEFAULT 0 NOT NULL, " +
+                "FOREIGN KEY(host_team_id) REFERENCES teams(_id), " +
+                "FOREIGN KEY(visitor_team_id) REFERENCES teams(_id), " +
                 "FOREIGN KEY(won_team_id) REFERENCES teams(_id))";
         sqLiteDatabase.execSQL(createTeamsTable);
         sqLiteDatabase.execSQL(createPlayersTable);
@@ -39,7 +43,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-       sqLiteDatabase.execSQL("drop table if exists teams");
+        sqLiteDatabase.execSQL("drop table if exists teams");
         sqLiteDatabase.execSQL("drop table if exists players");
         sqLiteDatabase.execSQL("drop table if exists match_history");
         onCreate(sqLiteDatabase);
@@ -97,7 +101,7 @@ public class Database extends SQLiteOpenHelper {
         return false;
     }
 
-    public boolean insertMatchHistory(String hostTeam, String visitorTeam, String wonTeam)
+    public boolean insertMatchHistory(String hostTeam, String visitorTeam, String wonTeam, int host_team_runs, int host_team_wickets, int visitor_team_runs, int visitor_team_wickets)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -110,6 +114,10 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put("host_team_id", hostTeamId);
         contentValues.put("visitor_team_id", visitorTeamId);
         contentValues.put("won_team_id", wonTeamId);
+        contentValues.put("host_team_runs", host_team_runs);
+        contentValues.put("host_team_wickets", host_team_wickets);
+        contentValues.put("visitor_team_runs", visitor_team_runs);
+        contentValues.put("visitor_team_wickets", visitor_team_wickets);
         long r = db.insert("match_history", null, contentValues);
         return r != -1;
     }
