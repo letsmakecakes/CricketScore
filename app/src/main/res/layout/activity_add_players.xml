@@ -51,6 +51,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/striker"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -75,6 +76,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/non_striker"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -116,6 +118,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/opening_bowler"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -130,7 +133,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/start_match"
         android:layout_width="wrap_content"
         android:onClick="startmatch"
         android:layout_height="wrap_content"
