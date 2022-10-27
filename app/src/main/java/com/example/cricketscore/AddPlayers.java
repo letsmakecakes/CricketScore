@@ -1,16 +1,18 @@
 package com.example.cricketscore;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AddPlayers extends AppCompatActivity {
     Button button;
-    EditText editText, editText2;
+    EditText editText, editText2, editText3;
+    String host;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,28 +21,18 @@ public class AddPlayers extends AppCompatActivity {
         button = (Button) findViewById(R.id.start_match);
         editText = (EditText) findViewById(R.id.striker);
         editText2 = (EditText) findViewById(R.id.non_striker);
+        editText3 = (EditText) findViewById(R.id.opening_bowler);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = getIntent();
-                String host = intent.getStringExtra("host");
-                String away = intent.getStringExtra("away");
-                String tossWon = intent.getStringExtra("tossWon");
-                String optedFor = intent.getStringExtra("optedFor");
-                String overs = intent.getStringExtra("overs");
-                String striker = editText.toString();
-                String nonStriker = editText2.toString();
-                Intent intent1 = new Intent(getApplicationContext(), InputScoreboard.class);
-                intent1.putExtra("host", host.toString());
-                intent1.putExtra("away", away.toString());
-                intent1.putExtra("tossWon", tossWon.toString());
-                intent1.putExtra("optedFor", optedFor.toString());
-                intent1.putExtra("overs", overs.toString());
-                intent1.putExtra("striker", striker);
-                intent1.putExtra("nonStriker", nonStriker);
-                startActivity(intent1);
-            }
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+
+        button.setOnClickListener(view -> {
+            Intent intent1 = new Intent(AddPlayers.this, InputScoreboard.class);
+            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+            myEdit.putString("striker", editText.getText().toString());
+            myEdit.putString("nonStriker", editText2.getText().toString());
+            myEdit.putString("openingBowler", editText3.getText().toString());
+            myEdit.commit();
+            startActivity(intent1);
         });
 
     }
