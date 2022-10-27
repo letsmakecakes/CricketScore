@@ -29,7 +29,6 @@ public class AddMatch extends AppCompatActivity {
         next = (Button) findViewById(R.id.next);
 
         next.setOnClickListener(view -> {
-            Bundle bundle = new Bundle();
             Intent intent = new Intent(getApplicationContext(), AddPlayers.class);
             intent.putExtra("host", host.toString());
             intent.putExtra("away", away.toString());
