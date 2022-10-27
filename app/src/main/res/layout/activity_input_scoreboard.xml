@@ -161,16 +161,16 @@
             android:layout_marginBottom="107dp"
             android:orientation="horizontal">
 
+
             <TextView
                 android:id="@+id/batsman_1"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="Batsman1"
                 android:textColor="@color/white">
 
             </TextView>
-
 
             <TextView
                 android:layout_width="42dp"
@@ -182,8 +182,7 @@
                 android:textSize="15dp">
 
             </TextView>
-
-            <EditText
+            <TextView
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -192,9 +191,11 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
-            <EditText
+
+
+            <TextView
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -203,10 +204,10 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
 
-            <EditText
+            <TextView
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -215,7 +216,7 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
 
 
@@ -240,7 +241,7 @@
 
             <TextView
                 android:id="@+id/batsman_2"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="Batsman2"
@@ -249,7 +250,7 @@
             </TextView>
 
 
-            <EditText
+            <TextView
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="80dp"
@@ -258,9 +259,9 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
-            <EditText
+            <TextView
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -269,9 +270,21 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
-            <EditText
+            <TextView
+                android:layout_width="42dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:hint="0"
+                android:textColor="#FBFAFA"
+                android:textColorHint="#FAF9F9"
+                android:textSize="15dp"/>
+
+
+
+
+            <TextView
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -280,19 +293,7 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
-
-
-            <EditText
-                android:layout_width="42dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:hint="0"
-                android:textColor="#FBFAFA"
-                android:textColorHint="#FAF9F9"
-                android:textSize="15dp">
-
-            </EditText>
+            </TextView>
 
 
         </LinearLayout>
@@ -326,6 +327,7 @@
 
             <TextView
 
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -334,7 +336,8 @@
 
             </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/t1"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -343,9 +346,10 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/t2"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -354,9 +358,10 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/t3"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -365,10 +370,11 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
 
 
-            <EditText
+            <TextView
+                android:id="@+id/t4"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -377,8 +383,9 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
-            <EditText
+            </TextView>
+            <TextView
+                android:id="@+id/t5"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -387,8 +394,9 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
-            <EditText
+            </TextView>
+            <TextView
+                android:id="@+id/t6"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -397,7 +405,7 @@
                 android:textColorHint="#FAF9F9"
                 android:textSize="15dp">
 
-            </EditText>
+            </TextView>
         </LinearLayout>
 
 
@@ -457,6 +465,8 @@
         app:layout_constraintVertical_bias="0.553">
 
         <Button
+            android:textColor="@color/white"
+            android:id="@+id/b0"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="0"
@@ -464,6 +474,8 @@
             android:backgroundTint="@color/black"></Button>
 
         <Button
+            android:textColor="@color/white"
+            android:id="@+id/b1"
             android:layout_width="59dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
@@ -472,6 +484,8 @@
             android:text="1"></Button>
 
         <Button
+            android:textColor="@color/white"
+            android:id="@+id/b2"
             android:layout_width="58dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
@@ -480,6 +494,8 @@
             android:text="2"></Button>
 
         <Button
+            android:textColor="@color/white"
+            android:id="@+id/b3"
             android:layout_width="58dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
@@ -488,6 +504,8 @@
             android:text="3"></Button>
 
         <Button
+            android:textColor="@color/white"
+            android:id="@+id/b4"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
@@ -496,6 +514,8 @@
             android:text="4"></Button>
 
         <Button
+            android:textColor="@color/white"
+            android:id="@+id/b5"
             android:layout_marginLeft="1dp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -504,6 +524,8 @@
             android:backgroundTint="@color/black"></Button>
 
         <Button
+            android:textColor="@color/white"
+            android:id="@+id/b6"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"

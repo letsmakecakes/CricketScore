@@ -22,7 +22,7 @@ public class AddMatch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_match);
         host = (EditText) findViewById(R.id.host_team);
-        away = (EditText) findViewById(R.id.away_team);
+        away = (EditText) findViewById(R.id.visitor_team);
         overs = (EditText) findViewById(R.id.overs);
         tossWon = (RadioGroup) findViewById(R.id.toss_won);
         optedFor = (RadioGroup) findViewById(R.id.opted_for);
