@@ -11,9 +11,9 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TEAMS"
+        android:text="@string/teams"
         android:textColor="#FDFBFB"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,30 +40,32 @@
             android:id="@+id/host_team"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:backgroundTint="#EDE7E7"
-            android:hint="HOST"
-            android:text="Enter host team"
-            android:onClick="reset"
+            android:hint="@string/host"
+            android:minHeight="48dp"
             android:singleLine="true"
+            android:text="@string/enter_host_team"
             android:textColor="#FDFBFB"
-            android:visibility="visible"></EditText>
+            android:visibility="visible"
+            android:inputType="text" />
 
         <EditText
-            android:id="@+id/away_team"
+            android:id="@+id/visitor_team"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:backgroundTint="#EDE7E7"
-            android:hint="VISITOR"
-            android:text="Enter visitor team"
-            android:onClick="reset"
+            android:hint="@string/visitor"
+            android:minHeight="48dp"
             android:singleLine="true"
+            android:text="@string/enter_visitor_team"
             android:textColor="#FDFBFB"
-            android:visibility="visible"></EditText>
-
-
+            android:visibility="visible"
+            android:autofillHints=""
+            android:inputType="text" />
     </LinearLayout>
 
     <TextView
@@ -71,9 +73,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:text="TOSS WON?"
+        android:text="@string/toss_won"
         android:textColor="#FDFBFB"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,37 +114,31 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/host_won"
                 android:layout_width="120dp"
                 android:layout_height="69dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:text="HOST"
+                android:text="@string/host"
                 android:textColor="#FDFBFB"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <RadioButton
+                android:id="@+id/visitor_won"
                 android:layout_width="204dp"
                 android:layout_height="69dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="40dp"
-                android:text="VISITOR"
+                android:layout_marginStart="40dp"
+                android:text="@string/visitor"
                 android:textColor="#FDFBFB"
-                android:textSize="20dp" />
-
-
+                android:textSize="20sp" />
         </RadioGroup>
-
-
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:text="OPTED FOR?"
+        android:text="@string/opted_for"
         android:textColor="#FDFBFB"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -181,23 +177,21 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/bat"
                 android:layout_width="120dp"
                 android:layout_height="69dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:text="BAT"
+                android:text="@string/bat"
                 android:textColor="#FDFBFB"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <RadioButton
+                android:id="@+id/bowl"
                 android:layout_width="221dp"
                 android:layout_height="73dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="40dp"
-                android:text="BALL"
+                android:layout_marginStart="40dp"
+                android:text="@string/ball"
                 android:textColor="#FDFBFB"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
 
         </RadioGroup>
@@ -219,16 +213,15 @@
         app:layout_constraintVertical_bias="0.768">
 
         <TextView
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
 
-            android:text="OVERS?"
+            android:text="@string/overs"
             android:textColor="#FDFBFB"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold">
 
         </TextView>
@@ -237,31 +230,32 @@
             android:id="@+id/overs"
             android:layout_width="208dp"
             android:layout_height="61dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:backgroundTint="#EDE7E7"
+            android:hint="@string/app_name"
             android:singleLine="true"
             android:textColor="#FDFBFB"
             android:textStyle="bold"
-            android:visibility="visible"></EditText>
+            android:visibility="visible"
+            android:autofillHints=""
+            android:inputType="text" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:backgroundTint="#100F0F"
         android:backgroundTintMode="add"
-        android:text="NEXT"
+        android:text="@string/next"
         android:textColor="#FDFBFB"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="next"
-        app:layout_constraintVertical_bias="0.88"></Button>
+        app:layout_constraintVertical_bias="0.88" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
