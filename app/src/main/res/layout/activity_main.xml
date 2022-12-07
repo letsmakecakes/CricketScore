@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -28,15 +28,16 @@
         android:id="@+id/match_history"
         android:layout_width="363dp"
         android:layout_height="101dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/cust_button"
+        android:backgroundTint="@color/purple_700"
         android:text="MATCH HISTORY"
         android:textSize="30sp"
-        android:background="@drawable/cust_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="20dp"
         app:layout_constraintVertical_bias="0.586" />
 
     <Button
@@ -44,13 +45,14 @@
         android:layout_width="363dp"
         android:layout_height="101dp"
         android:layout_margin="10dp"
+        android:background="@drawable/cust_button"
+        android:backgroundTint="@color/purple_700"
+        android:onClick="openTeamStats"
         android:text="@string/team_stats"
         android:textSize="30sp"
-        android:onClick="openTeamStats"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
-        android:background="@drawable/cust_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/match_history"
         app:layout_constraintVertical_bias="0.167" />
@@ -60,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_to_ngully_cricket"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

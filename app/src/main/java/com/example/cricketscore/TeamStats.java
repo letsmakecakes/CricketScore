@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 public class TeamStats extends AppCompatActivity {
     String[] teams;
+    String[] team2 = {"India", "Australlia"};
     Database database;
     Cursor cursor;
     ListView listView;
@@ -32,7 +33,7 @@ public class TeamStats extends AppCompatActivity {
             }
         }
         listView = (ListView) findViewById(R.id.team_list);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(TeamStats.this, android.R.layout.simple_dropdown_item_1line, teams);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(TeamStats.this, android.R.layout.simple_dropdown_item_1line, team2);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener((adapterView, view, i, l) -> {

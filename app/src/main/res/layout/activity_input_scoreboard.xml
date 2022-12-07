@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#0F19DF">
+    android:background="#22B0BD">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -305,8 +305,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="48dp"
-            android:background="#0F19DF"
-            >
+            android:background="#22B0BD">
 
         </RelativeLayout>
 
@@ -426,7 +425,7 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="2dp"
-            android:backgroundTint="#0F19DF"
+            android:backgroundTint="#22B0BD"
             android:text="UNDO">
 
         </Button>
@@ -435,7 +434,7 @@
             android:layout_width="131dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
-            android:backgroundTint="#0F19DF"
+            android:backgroundTint="#22B0BD"
             android:text="SWAP">
 
         </Button>
@@ -444,7 +443,7 @@
             android:layout_width="145dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="1dp"
-            android:backgroundTint="#0F19DF"
+            android:backgroundTint="#22B0BD"
             android:onClick="retire"
             android:text="RETIRE">
 
@@ -549,7 +548,7 @@
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:backgroundTint="#0F19DF"
+            android:backgroundTint="#22B0BD"
             android:text="WICKET">
 
         </Button>
@@ -558,7 +557,7 @@
             android:layout_width="139dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
-            android:backgroundTint="#0F19DF"
+            android:backgroundTint="#22B0BD"
             android:text="WIDE">
 
         </Button>
@@ -567,7 +566,7 @@
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
-            android:backgroundTint="#0F19DF"
+            android:backgroundTint="#22B0BD"
             android:text="NO=BALL">
 
         </Button>
