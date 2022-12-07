@@ -567,7 +567,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
             android:backgroundTint="#0E6770"
-            android:text="NO=BALL">
+            android:text="NO-ALL">
 
         </Button>
 
