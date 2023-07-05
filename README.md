@@ -85,9 +85,7 @@ Cricket Score aims to be an application compatible with all phones that provides
 
 - **Intuitive Features:** Attention to detail in incorporating all the necessary features, including meticulous ball recording and end-of-match analysis.
 
-- **Responsive Design:**
-
- Employing responsive design principles to adapt to different screen dimensions and enhance the user experience.
+- **Responsive Design:** Employing responsive design principles to adapt to different screen dimensions and enhance the user experience.
 
 ## License
 
