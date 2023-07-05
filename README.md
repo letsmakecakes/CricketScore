@@ -6,11 +6,11 @@ Cricket Score is a mobile application that provides ball-by-ball information, li
 
 ## Stakeholders
 
-- Rini Sahu
+- [Rini Sahu](https://github.com/RiniSah)
 - Adwaith Rajeev
-- Akanksha Sinha
-- Damodar Pai
-- Rahul Maity
+- [Akanksha Sinha](https://github.com/sinhaakankshasinha)
+- [Damodar Pai](https://github.com/damuspirit)
+- [Rahul Maity](https://github.com/foxyfool)
 
 ## Features
 
